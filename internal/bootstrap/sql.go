@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"fmt"
 	"github.com/yonisaka/idempotency/config"
-	"github.com/yonisaka/idempotency/database"
+	"github.com/yonisaka/idempotency/database/seeder"
 	"github.com/yonisaka/idempotency/internal/entity"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -43,7 +43,7 @@ func AutoMigrate(db *gorm.DB) error {
 }
 
 func AutoSeed(db *gorm.DB) error {
-	if err := database.UserSeeder(db); err != nil {
+	if err := seeder.UserSeeder(db); err != nil {
 		return err
 	}
 	return nil

@@ -1,4 +1,4 @@
-package database
+package seeder
 
 import (
 	"github.com/yonisaka/idempotency/internal/entity"
